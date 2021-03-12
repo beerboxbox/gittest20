@@ -2,6 +2,7 @@
 
 const line = require('@line/bot-sdk');
 const express = require('express');
+const tempText = require('./xxx');
 
 // create LINE SDK config from env variables
 // const config = {
@@ -43,8 +44,11 @@ function handleEvent(event) {
   // create a echoing text message
   // const echo = { type: 'text', text: event.message.text };
 
-  const messagexx = JSON.stringify(event);
-  const echo = { type: 'text', text: messagexx };
+  // const messagexx = JSON.stringify(event);
+  // const messagexxText = MSGXXXX(event.message.text);
+  const resultText = tempText.addText(event.message.text);
+
+  const echo = { type: 'text', text: resultText };
 
   // const xxx222 = 
   // console.log(result);
